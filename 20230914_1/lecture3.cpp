@@ -1,14 +1,15 @@
 #include <stdio.h>
-
-int main(void)
+int acc(int num)
 {
-	int val_1, Val_2, a, b;
+	if (num == 0) return 1;
 
-	printf("a = 10, b = 15\n");
+	return num * acc(num - 1);
+}
 
-	a = 10;
-	b = 15;
-	val_1 = ++a + b--;
+int main() {
+	int num;
 
-	printf("1.val_1 = ++a + b-- = %d, a = %d, b = %d", val_1, a, b);
+	printf("계산할 팩토리얼 값 입력 : ");
+	scanf_s("%d", &num);
+	printf("%d\n", acc(num));
 }
